@@ -14,7 +14,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        val mapsKey = (project.findProperty("MAPS_API_KEY") as String?) ?: "YOUR_GOOGLE_MAPS_API_KEY"
+        val mapsKey = (project.findProperty("MAPS_API_KEY") as String?) ?: "AIzaSyA03tc8_xkPHr9r9ow4K2xlMbHrzl3R5w8"
         manifestPlaceholders["MAPS_API_KEY"] = mapsKey
     }
 
