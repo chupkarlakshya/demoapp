@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafePath - Incident Focus</title>
+  <link rel="stylesheet" href="/response.css">
+</head>
+<body>
+  <div class="app-grid">
+    <!-- Left Column: Active Response -->
+    <main class="active-response">
+      <p class="eyebrow">ACTIVE RESPONSE</p>
+      <h1>Incident Focus</h1>
+
+      <div id="no-active-sos" class="empty-state">
+        <p>No critical SOS alerts currently active.</p>
+      </div>
+
+      <div id="focus-card" class="focus-card" style="display: none;">
+        <div class="badge-row">
+          <span class="badge security">SECURITY</span>
+          <span class="badge critical">CRITICAL</span>
+          <span class="badge location" id="sos-source">USER</span>
+        </div>
+
+        <h2 id="sos-title">SOS Alert from User</h2>
+        <p class="description">Dispatch immediate response team. Call location to verify status.</p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span>LAST UPDATED</span>
+            <strong id="stat-updated">5/4/2026, 1:59:57 AM</strong>
+          </div>
+          <div class="stat-box">
+            <span>NOTIFICATIONS ROUTED</span>
+            <strong id="stat-routed">1</strong>
+          </div>
+          <div class="stat-box">
+            <span>ACKNOWLEDGED</span>
+            <strong id="stat-ack">0</strong>
+          </div>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">source:app</span>
+          <span class="tag" id="sos-trigger-id">trigger:sos-1777840196434</span>
+        </div>
+
+        <div class="action-footer">
+          <div class="secondary-actions">
+            <div class="action-item"><span class="icon">🔒</span> LOCK DOWN</div>
+            <div class="action-item"><span class="icon">👮</span> POLICE</div>
+          </div>
+          <button id="resolve-btn" class="verify-btn">
+            <span class="check">✔</span> VERIFY & RESOLVE INCIDENT
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Column: Network -->
+    <aside class="response-network">
+      <p class="eyebrow">RESPONSE NETWORK</p>
+      <h1>Notification Routing</h1>
+
+      <div class="routing-card">
+        <div class="routing-info">
+          <span>ROUTING STATUS</span>
+          <strong id="active-responders-count">1 Active Responders</strong>
+        </div>
+        <button class="broadcast-btn">📢 BROADCAST ALL</button>
+      </div>
+
+      <p class="section-title">RESPONDER LOG</p>
+      <div id="responder-list" class="responder-list">
+        <!-- Responders will be injected here -->
+      </div>
+    </aside>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="/index.html">← Back to Command Center</a>
+  </nav>
+
+  <script src="/response.js"></script>
+</body>
+</html>

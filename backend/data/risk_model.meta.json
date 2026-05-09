@@ -1,0 +1,41 @@
+{
+  "modelType": "GradientBoostingRegressor",
+  "features": [
+    "latitude",
+    "longitude",
+    "hour",
+    "day_of_week"
+  ],
+  "targetRange": [
+    0,
+    100
+  ],
+  "neighborhoodRadiusMeters": 800.0,
+  "actWeights": {
+    "act302": 5.0,
+    "act363": 4.0,
+    "act323": 3.0,
+    "act379": 2.0
+  },
+  "nightBoost": 1.5,
+  "rawTargetMax": 5.219807017944512,
+  "trainGrid": {
+    "lat": [
+      22.62,
+      22.82,
+      36
+    ],
+    "lng": [
+      75.78,
+      75.98,
+      36
+    ],
+    "hour": 8,
+    "day": 7,
+    "samples": 72576
+  },
+  "testR2": 0.7831801648282626,
+  "cvR2": 0.7790281832249482,
+  "trainingCrimeRows": 390,
+  "verifiedCrowdRows": 5
+}

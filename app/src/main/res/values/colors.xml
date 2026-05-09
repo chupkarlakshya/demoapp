@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_primary">#6A1B9A</color>
+    <color name="brand_primary_dark">#4A148C</color>
+    <color name="brand_accent">#FF4081</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_dim">#F5F5F7</color>
+    <color name="text_primary">#202124</color>
+    <color name="text_secondary">#5F6368</color>
+
+    <color name="route_fastest">#1E88E5</color>     <!-- Blue -->
+    <color name="route_balanced">#FBC02D</color>    <!-- Yellow -->
+    <color name="route_safest">#43A047</color>      <!-- Green -->
+
+    <color name="risk_high">#E53935</color>
+    <color name="risk_medium">#FB8C00</color>
+    <color name="risk_low">#43A047</color>
+
+    <color name="sos_red">#D32F2F</color>
+    <color name="sos_red_dark">#B71C1C</color>
+
+    <color name="status_green">#2E7D32</color>
+    <color name="warn_amber">#F57F17</color>
+</resources>

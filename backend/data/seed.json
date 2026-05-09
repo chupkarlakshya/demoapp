@@ -1,0 +1,49 @@
+{
+  "incidents": [
+    {
+      "id": "inc_seed_rajwada_lighting",
+      "type": "POOR_LIGHTING",
+      "description": "Poor lighting reported near the market lane.",
+      "latitude": 22.7196,
+      "longitude": 75.8577,
+      "severity": 3,
+      "status": "verified",
+      "reportedBy": "demo",
+      "createdAt": "2026-05-04T09:00:00.000Z"
+    },
+    {
+      "id": "inc_seed_palasia_suspicious",
+      "type": "SUSPICIOUS_ACTIVITY",
+      "description": "Crowd-sourced alert near Palasia after dark.",
+      "latitude": 22.7253,
+      "longitude": 75.8837,
+      "severity": 4,
+      "status": "verified",
+      "reportedBy": "demo",
+      "createdAt": "2026-05-04T09:10:00.000Z"
+    }
+  ],
+  "sosEvents": [],
+  "riskZones": [
+    {
+      "id": "zone_seed_rajwada",
+      "name": "Rajwada Market Night Corridor",
+      "latitude": 22.7196,
+      "longitude": 75.8577,
+      "radiusMeters": 350,
+      "riskScore": 76,
+      "source": "crime_data + crowd_reports",
+      "updatedAt": "2026-05-04T09:00:00.000Z"
+    },
+    {
+      "id": "zone_seed_palasia",
+      "name": "Palasia Late Evening Cluster",
+      "latitude": 22.7253,
+      "longitude": 75.8837,
+      "radiusMeters": 300,
+      "riskScore": 68,
+      "source": "crowd_reports",
+      "updatedAt": "2026-05-04T09:10:00.000Z"
+    }
+  ]
+}

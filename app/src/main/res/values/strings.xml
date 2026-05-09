@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SafePath Indore</string>
+    <string name="search_hint">Search or Long-press map</string>
+    <string name="shield_secured">🛡 Shield Secured</string>
+    <string name="sos">SOS</string>
+    <string name="safe_route">Safe Route</string>
+    <string name="heatmap">Heatmap</string>
+    <string name="fake_call">Fake Call</string>
+    <string name="live_track">Live Track</string>
+    <string name="stick_to_main_roads">Stick to Main Roads</string>
+    <string name="navigate_in_google_maps">Navigate in Google Maps</string>
+    <string name="unsafe_warning">⚠ Unsafe area detected nearby</string>
+    <string name="hold_to_trigger_sos">Hold for 2 seconds to trigger SOS</string>
+    <string name="long_press_label">Long Press</string>
+    <string name="tracking_active">Tracking Active</string>
+    <string name="emergency_contact">Contacts</string>
+    <string name="set_timer">Safety Timer</string>
+</resources>

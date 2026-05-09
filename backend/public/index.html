@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafePath Command Center</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">SafePath Indore</p>
+      <h1>Command Center</h1>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <a href="/response.html" style="text-decoration: none;">
+        <button type="button" class="primary" style="background: #8b3a1a; border-color: #8b3a1a;">Active Response</button>
+      </a>
+      <button id="policeToggle" type="button" style="border-color: #276fc2; color: #276fc2;">Show Police Stations</button>
+      <button id="refreshButton" type="button">Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="metrics" aria-label="System overview">
+      <article>
+        <span>Total Incidents</span>
+        <strong id="totalIncidents">0</strong>
+      </article>
+      <article>
+        <span>Pending Reports</span>
+        <strong id="pendingReports">0</strong>
+      </article>
+      <article>
+        <span>Active SOS</span>
+        <strong id="activeSos">0</strong>
+      </article>
+      <article>
+        <span>High-Risk Zones</span>
+        <strong id="highRiskZones">0</strong>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <div class="mapPanel">
+        <div class="panelHeader">
+          <h2>Incident Map</h2>
+          <div class="legend">
+            <span><i class="dot pending"></i>Pending</span>
+            <span><i class="dot verified"></i>Verified</span>
+            <span><i class="dot sos"></i>SOS</span>
+          </div>
+        </div>
+        <div id="mapCanvas" class="mapCanvas" role="img" aria-label="Indore incident map"></div>
+      </div>
+
+      <aside class="sidePanel">
+        <div class="panelHeader">
+          <h2>Active SOS</h2>
+        </div>
+        <div id="sosList" class="stack"></div>
+      </aside>
+    </section>
+
+    <section class="tablePanel">
+      <div class="panelHeader">
+        <h2>Report Moderation</h2>
+        <select id="statusFilter" aria-label="Filter reports">
+          <option value="">All reports</option>
+          <option value="pending">Pending</option>
+          <option value="verified">Verified</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th>Location</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="incidentTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
