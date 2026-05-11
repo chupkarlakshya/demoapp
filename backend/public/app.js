@@ -53,7 +53,13 @@ function renderPoliceStations() {
         iconAnchor: [15, 15]
       })
     });
-    marker.bindPopup(`<strong>${ps.name}</strong><br>Status: Ready to Dispatch`);
+    marker.bindPopup(`
+      <div class="modern-popup">
+        <h3>👮 ${ps.name}</h3>
+        <p>Status: <span style="color: var(--green)">Ready to Dispatch</span></p>
+        <p>Response Time: ~4 mins</p>
+      </div>
+    `);
     policeLayer.addLayer(marker);
   });
 }
@@ -97,9 +103,13 @@ function renderMap(incidents, sosEvents) {
     });
 
     marker.bindPopup(`
-      <strong>${fmtType(incident.type)}</strong><br>
-      Status: ${incident.status}<br>
-      ${incident.description || "No details"}
+      <div class="modern-popup">
+        <h3>📍 ${fmtType(incident.type)}</h3>
+        <p>${incident.description || "No additional details provided."}</p>
+        <div class="status-tag" style="background: ${color}22; color: ${color}">
+          ${incident.status}
+        </div>
+      </div>
     `);
 
     markersLayer.addLayer(marker);
@@ -115,9 +125,12 @@ function renderMap(incidents, sosEvents) {
     });
 
     marker.bindPopup(`
-      <strong style="color: #cb3d3d;">ACTIVE SOS</strong><br>
-      User: ${sos.userId || "anonymous"}<br>
-      Time: ${fmtTime(sos.createdAt)}
+      <div class="modern-popup">
+        <h3 style="color: var(--red)">⚠️ ACTIVE SOS</h3>
+        <p><strong>User:</strong> ${sos.userId || "anonymous"}</p>
+        <p><strong>Time:</strong> ${fmtTime(sos.createdAt)}</p>
+        <p style="margin-top: 8px; font-size: 11px; color: var(--red);">Dispatch immediate response</p>
+      </div>
     `);
 
     markersLayer.addLayer(marker);
@@ -146,7 +159,7 @@ function renderIncidents(incidents) {
     <tr>
       <td>${fmtType(item.type)}</td>
       <td>${item.severity}</td>
-      <td><span class="badge">${item.status}</span></td>
+      <td><span class="badge" data-status="${item.status}">${item.status}</span></td>
       <td>${Number(item.latitude).toFixed(5)}, ${Number(item.longitude).toFixed(5)}</td>
       <td>${item.description || "-"}</td>
       <td>
